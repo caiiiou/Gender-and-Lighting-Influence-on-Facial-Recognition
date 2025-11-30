@@ -79,7 +79,7 @@ pip install -r requirements_clean.txt
 
 ---
 
-## 🧩 Folder Structure
+## Folder Structure
 
 ```
 faces/
