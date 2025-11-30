@@ -29,11 +29,13 @@ Performance is evaluated using **Equal Error Rate (EER)**, **d-prime (d′)**, *
 ## Feature-Level Approach
 
 Each image is analyzed for:
+
 - **Interocular Distance** – distance between left and right eye centroids.  
 - **Lip Area** – combined polygon area of upper and lower lips.  
 - **Lighting Score** – mean brightness (pixel intensity average).  
 
 A normalized Euclidean difference between these features produces a similarity score between 0 and 1:
+
 ```python
 1 / (1 + sqrt((Δeye)^2 + (Δlip)^2))
 ```
@@ -46,7 +48,7 @@ The faces used in this project come from the publicly available **Caltech Faces 
 
 **Citation:**
 > California Institute of Technology. (1999). *Caltech Faces 1999 Dataset* [Data set]. CaltechDATA.  
-> https://data.caltech.edu/records/6rjah-hdv18
+> <https://data.caltech.edu/records/6rjah-hdv18>
 
 ---
 
@@ -54,8 +56,12 @@ The faces used in this project come from the publicly available **Caltech Faces 
 
 ### 1️⃣ System prerequisites (Linux/macOS)
 
+Ensure you have dlib already installed with Python bindings
+
+Then, make sure you have cmake installed:
+
 ```bash
-sudo apt install cmake g++ make libopenblas-dev liblapack-dev libboost-all-dev python3-dev
+brew install cmake
 ```
 
 ### 2️⃣ Create and activate virtual environment
@@ -103,6 +109,7 @@ evaluator.py
 ### 1️⃣ Generate Metadata
 
 Prompts gender input and computes lighting score:
+
 ```bash
 python3 metadata_generator.py
 ```
@@ -136,12 +143,14 @@ python3 evaluator.py
 ## Output
 
 Each test creates a folder containing:
+
 - `scores.csv`
 - `score_distribution_[group].png`
 - `roc_curve_[group].png`
 - `det_curve_[group].png`
 
 Example:
+
 ```
 results/gender/
  ├── score_distribution_male.png
@@ -169,7 +178,6 @@ Balanced accuracy across male/female groups suggests minimal demographic bias.
 
 ---
 
-
 ## References
 
 1. Abdi, H. (2007). *Signal Detection Theory (SDT).* In *Encyclopedia of Measurement and Statistics.*  
@@ -177,4 +185,4 @@ Balanced accuracy across male/female groups suggests minimal demographic bias.
 3. Viola, P., & Jones, M. (2001). *Rapid Object Detection using a Boosted Cascade of Simple Features.* IEEE CVPR.  
 4. OpenCV / Face_Recognition Python Docs (2024).  
 5. DeepFace API Documentation (2025).  
-6. California Institute of Technology. (1999). *Caltech Faces 1999 Dataset* [Data set]. CaltechDATA. https://data.caltech.edu/records/6rjah-hdv18
+6. California Institute of Technology. (1999). *Caltech Faces 1999 Dataset* [Data set]. CaltechDATA. <https://data.caltech.edu/records/6rjah-hdv18>
