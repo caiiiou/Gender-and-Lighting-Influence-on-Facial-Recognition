@@ -1,4 +1,25 @@
+# macOS
 .DS_Store
+**/.DS_Store
+
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
 venv/
+.venv/
+env/
+
+# Editors
+.idea/
+.vscode/
+
+# Local tooling
+.claude/
